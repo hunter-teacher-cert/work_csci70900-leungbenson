@@ -56,6 +56,8 @@ public class Mancala{
     // declares int array, declares size
     int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
     boolean finished = gameFinished(board); // Game is finished.  One side has no more stones
+    
+    // Loop game until one side has no more stones
     while(!finished){
       // Print Board
       printBoard(board);
