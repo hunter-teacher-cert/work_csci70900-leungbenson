@@ -55,16 +55,18 @@ public class Mancala{
   public static void main(String[] args){
     // declares int array, declares size
     int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
+    boolean finished = gameFinished(board); // Game is finished.  One side has no more stones
+    while(!finished){
+      // Print Board
+      printBoard(board);
 
-    // Print Board
-    printBoard(board);
+      // Player's Turn
+      printBoard(playersTurn(board));
 
-    // Player's Turn
-    printBoard(playersTurn(board));
+      // AI's Turn
+      printBoard(aiTurn(board));
 
-    // AI's Turn
-    printBoard(aiTurn(board));
-
+    }
 
   }
 
@@ -128,6 +130,17 @@ public class Mancala{
         break;
       }
       board[i] ++; //Each pit gets a stone
+
+      // Play again if last stone ends in Mancala pit
+      if (counter==0 && i==6 ){
+        printBoard(board);
+        playersTurn(board);
+      }
+      else if (counter==0 && i==13){
+        printBoard(board);
+        aiTurn(board);
+      }
+      
     }
     return board;
   }
@@ -146,5 +159,17 @@ public class Mancala{
     stonesTracking(aPit, aStones, board);
     
     return board;
+  }
+
+  public static boolean gameFinished(int[] board){
+    if (board[0]==0 && board[1]==0 && board[2]==0 && board[3]==0 && board[4]==0 && board[5]==0){
+      return true;
+    }
+    else if (board[7]==0 && board[8]==0 && board[9]==0 && board[10]==0 && board[11]==0 && board[12]==0){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 } 
