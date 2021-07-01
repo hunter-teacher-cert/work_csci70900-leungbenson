@@ -62,18 +62,24 @@ public class Mancala{
     int[] board = {4,4,4,4,4,4,0,4,4,4,4,4,4,0};
     boolean finished = gameFinished(board); // Game is finished.  One side has no more stones
     
-    // Loop game until one side has no more stones
-    while(!finished){
-      // Print Board
+    // Print Board
       printBoard(board);
 
+    // Loop game until one side has no more stones
+    while(!finished){
+      
       // Player's Turn
       printBoard(playersTurn(board));
 
       // AI's Turn
       printBoard(aiTurn(board));
 
+      // Check if game is finished
+      gameFinished(board);
+
     }
+
+    checkWinner(board); // Totals stones for each player and checks winner
 
   }
 
@@ -152,31 +158,82 @@ public class Mancala{
     return board;
   }
 
+  // Method for AI's turn  
   public static int[] aiTurn(int[] board){
     // Declare random variable
     Random rand = new Random();
 
     // AI chooses pit and stones
-    int aPit = rand.nextInt(6) + 7;
+    int aPit = rand.nextInt(6) + 7; // Random integer between 7 and 12
+    // (high - low + 1) + low
     int aStones = board[aPit];
-    System.out.println("\nAI has chosen to pick up stones from pit " + aPit);
-    
-    //Print board after choice is made
-    System.out.println("\n");
-    stonesTracking(aPit, aStones, board);
-    
+    if (aStones < 1){
+      aiTurn(board);
+    }
+    else {
+      //Print board after choice is made
+      System.out.println("\nAI has chosen to pick up stones from pit " + aPit);
+      System.out.println("\n");
+      stonesTracking(aPit, aStones, board);
+    } 
+        
     return board;
   }
 
+  // Method to check if game is finished (Any side has no stones left)
   public static boolean gameFinished(int[] board){
+    
+    //If Player's board has no stones left
     if (board[0]==0 && board[1]==0 && board[2]==0 && board[3]==0 && board[4]==0 && board[5]==0){
       return true;
     }
+
+    //If AI's board has no stones left
     else if (board[7]==0 && board[8]==0 && board[9]==0 && board[10]==0 && board[11]==0 && board[12]==0){
       return true;
     }
+
+    // Anything else game is not finished
     else{
       return false;
     }
+  }
+
+  public static void checkWinner (int[] board){
+    
+    int pTotal = board[6]; // Player's total stones. Currently just Mancala pit
+    // add arrays from 0-5 on Player's Side
+    for (int i = 0; i<=5; i++) {
+      pTotal = pTotal + board[i]; //Adding pit to total
+    }
+
+    //add arrays from 7-12 on AI's side
+    int aTotal = board[13];  // AI's total stones. Currently just Mancala pit
+    for (int i = 7; i<=12; i++) {
+      aTotal = aTotal + board[i]; //Adding pit to total
+    }
+
+    // Print totals for each player
+    System.out.println("You have " + pTotal + "stones and AI has "+ aTotal + "stones.");
+
+    // Check who won by who has more stones
+    
+    //Player wins
+    if(pTotal>aTotal){
+      System.out.println("You have more stones.  Congrats!!! You have won!");
+    }
+
+    //AI wins
+    else if(pTotal<aTotal){
+      System.out.println("You have less stones.  Sorry, AI has won.  Good luck next time!");
+    }
+
+    //Tie game
+    else{
+      System.out.println("You have the same number of stones.  The game is a tie.");
+    }
+
+
+   
   }
 } 
