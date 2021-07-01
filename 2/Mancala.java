@@ -43,6 +43,11 @@ a move consists of collecting all stones in a pit and dropping them 1 by 1 into 
 
   Print array at the end of each plaer's turn
   
+
+  Still needed:
+  Skip opponent's Mancala
+  Check winner at the end
+  Obtain opponent's stones if end in empty pit
 */
 
 import java.io.*;
