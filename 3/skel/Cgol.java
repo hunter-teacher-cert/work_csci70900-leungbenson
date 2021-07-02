@@ -21,7 +21,7 @@ public class Cgol
     char[][] result = new char[rows][cols];
     for (int r = 0; r < result.length; r++){
       for (int c = 0; c< result[r].length; c++){
-        result[r][c] = 'O';
+        result[r][c] = '_';
       }
     }
     return result;
@@ -171,21 +171,17 @@ public class Cgol
      (alive 'X', dead ' ')
   */
   public static char getNextGenCell(char[][] board,int r, int c) {
-    /*
-    
-    // Call in countNeighbors
-    for (int i = 0; i < r; i++){
-      for (int j = 0; j < c; j++){
-        int neigh = countNeighbours(board, i, j);
-        if (neigh <2 || neigh >3){//die
-          setCell(board,r,c,"0");
-        }else if (neigh == 3){
-          setCell(board,r,c,"X");
-        }
-
-      }
+    int neigh = countNeighbors(board, r, c);
+    if (neigh <2 || neigh >3){//die if 0 , 1, or 4+ neighbors
+      return '_';
+    }else if (neigh == 3){ //birth
+      return 'X';
+    }else if (neigh == 2){ //return current condition
+      return board[r][c];
+    }else{
+      return '-';
     }
-    
+  /*
     * A cell with 2 or 3 living neighbours will survive for the next generation.
     
    Death:
@@ -197,23 +193,28 @@ public class Cgol
    * Each dead cell adjacent to exactly 3 living neighbours is a birth cell. It will come alive next generation.
    NOTA BENE:  All births and deaths occur simultaneously. Together, they constitute a single generation
    */
-    return 'a'; //dummy variable
-
   }
 
 
   //generate new board representing next generation
   public static char[][] generateNextBoard(char[][] board) {
-    
-    //dummy variable
-    char[][] result = {{'a'},{'b'}};
-    return result;
-    
-    //for(int i = 0; i < r; i++){
-        //for (j = 0; j < j[0].length){
-          
+
+    //make new board
+    char[][] newBoard = createNewBoard(board.length,board[0].length);
+    //loop through new board
+    for(int rowNB = 0; rowNB < newBoard.length; rowNB++){
+      for (int colNB = 0; colNB < newBoard[0].length;colNB++){
+            newBoard[rowNB][colNB] = getNextGenCell(board,rowNB,colNB);
+    //      //use countNeighbor to figure out if alive or not
         }
-    }
+     }
+    return newBoard;
+    
+    // for(int i = 0; i < r; i++){
+    //     for (j = 0; j < j[0].length){
+          
+    //     }
+    // }
     
     
     //should represent the new amount of Xs and Os based on position of living cells
@@ -234,6 +235,7 @@ public class Cgol
     //breathe life into some cells:
     setCell(board, 0, 0, 'X');
     setCell(board, 0, 1, 'X');
+    setCell(board, 0, 2, 'X');
     setCell(board, 3, 2, 'X');
     setCell(board, 3, 3, 'X');
     printBoard(board);
