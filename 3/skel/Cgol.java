@@ -222,7 +222,7 @@ public class Cgol{
     setCell(board, 3, 2, 'X');
     setCell(board, 3, 3, 'X');
     
-    //Print 1 Gen
+    //Print 1st Gen
     System.out.println("Gen X:");
     printBoard(board);
     System.out.println("--------------------------\n\n");
