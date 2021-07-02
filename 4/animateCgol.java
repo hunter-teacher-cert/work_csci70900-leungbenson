@@ -14,7 +14,7 @@ Dwayne, Jiyoon, and Benson
    NOTA BENE:  All births and deaths occur simultaneously. Together, they constitute a single generation
 */
 
-public class Cgol{
+public class animateCgol{
   //initialize empty board (all cells dead)
   public static char[][] createNewBoard(int rows, int cols) {
     char[][] result = new char[rows][cols];
