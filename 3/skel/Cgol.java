@@ -210,18 +210,33 @@ public class Cgol{
     //Initialize empty board
 
     char[][] board;
-    board = createNewBoard(5,5);
+    board = createNewBoard(15,15);
     System.out.println("Empty Board:");
     printBoard(board);
     System.out.println("--------------------------\n\n");
 
     //breathe life into some cells:
-    setCell(board, 0, 0, 'X');
-    setCell(board, 0, 1, 'X');
-    setCell(board, 0, 2, 'X');
-    setCell(board, 3, 2, 'X');
-    setCell(board, 3, 3, 'X');
+
+    //Static
+    setCell(board, 1, 1, 'X');
+    setCell(board, 2, 1, 'X');
+    setCell(board, 2, 2, 'X');
+    setCell(board, 1, 2, 'X');
     
+
+    //Oscillating
+    setCell(board, 8, 13, 'X');
+    setCell(board, 9, 13, 'X');
+    setCell(board, 10, 13, 'X');
+    // setCell(board, 4, 4, 'X');
+
+    //Traveling
+    setCell(board, 6, 5, 'X');
+    setCell(board, 7, 6, 'X');
+    setCell(board, 8, 6, 'X');
+    setCell(board, 8, 5, 'X');
+    setCell(board, 8, 4, 'X');
+       
     //Print 1st Gen
     System.out.println("Gen X:");
     printBoard(board);
