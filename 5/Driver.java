@@ -5,8 +5,7 @@
 Your driver file should contain code to (in suggested development order)
 
 
-print all of the above (See multiple ways to do this? Try all -- and document in comments!)
-test for equality of each of the Time instances above. Print results.
+
 add two Time objects and print results
 add two Time objects and save the result in another Time object
 Your Time class definition file should contain code to
@@ -46,6 +45,17 @@ public class Driver {
     printTime(t);
     
 
+
+    //test for equality of each of the Time instances above. Print results.
+    
+  //not fully working yet
+    checkTime(t, var);
+    //t = new Time(12,50,30.2); //how do we check if they are not equal?
+   // checkTime(t, var);
+
+  
+
+
   }//end main()
 
 //Method to print time
@@ -53,5 +63,15 @@ public class Driver {
     System.out.printf("%02d:%02d:%04.1f\n",
         t.hour, t.minute, t.second);
   }//end of printTime Method
+
+  public static void checkTime(Time t, Time var){
+    if (t == var){
+      System.out.println("The times are the same.");
+    }
+    else{
+      System.out.println("The times are different.");
+    }
+    
+  }//end of checkTime
 
 }//end class
