@@ -31,7 +31,7 @@ public class Animate
     //clear screen, place cursor at origin (upper left)
     System.out.print("[0;0H\n");
 
-    System.out.println("we are aaanimaniacs " + n);
+    //System.out.println("we are aaanimaniacs " + n);
 
     // After you have predicted/observed/reconciled
     // behavior of the preceding line,
@@ -39,11 +39,11 @@ public class Animate
     // uncomment the for loop below, and
     // re-apply your process.
 
-    /*
+    // Prints out line by line from bottom to top
     for( int i=n; i > 0; i-- ) {
       System.out.println("we are aaanimaniacs " + i);
     }
-    */
+    
 
     delay(1000);
   }

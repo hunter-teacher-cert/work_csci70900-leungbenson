@@ -203,7 +203,35 @@ public class animateCgol{
     //
   }
   
-// ^ Levene
+  public static void delay(int n) {
+    try {
+      Thread.sleep(n);
+    }
+    catch(InterruptedException e) {}
+  }
+
+
+  // "repaint" by using an ANSI control character to
+  // repeatedly place the cursor at the origin (upper left)
+  public static void animate(char[][] board, int frame) {
+    //clear screen, place cursor at origin (upper left)
+    System.out.print("[2J\n");
+    System.out.print("[0;0H\n");
+    
+
+    printBoard(board);
+    System.out.println("Gen X + " + frame + ": ");
+
+    // After you have predicted/observed/reconciled
+    // behavior of the preceding line,
+    // comment it out,
+    // uncomment the for loop below, and
+    // re-apply your process.
+   
+
+    delay(1000);
+  }
+
 
   public static void main( String[] args )
   {
@@ -235,7 +263,13 @@ public class animateCgol{
     setCell(board, 8, 6, 'X');
     setCell(board, 8, 5, 'X');
     setCell(board, 8, 4, 'X');
-       
+    
+    //Animate Cgol
+    for (int frame = 0; frame < 10; frame++) {
+      board = generateNextBoard(board);
+      animate(board, frame);
+     
+    /*
     //Print 1st Gen
     System.out.println("Gen X:");
     printBoard(board);
@@ -252,7 +286,12 @@ public class animateCgol{
     board = generateNextBoard(board);
     printBoard(board);
     System.out.println("--------------------------\n\n");
+    */
+
+    }
 
   }//end main()
+  
+  
 
-}//end class
+}
