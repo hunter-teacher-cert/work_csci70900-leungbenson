@@ -47,13 +47,25 @@ public class Driver {
 
 
     //test for equality of each of the Time instances above. Print results.
-    
-  //not fully working yet
-    checkTime(t, var);
-    //t = new Time(12,50,30.2); //how do we check if they are not equal?
-   // checkTime(t, var);
 
-  
+    checkTime(t, var); //same time (t and var are same)
+
+    t = new Time(12,50,30.2); //change t
+    checkTime(t, var); //different time (t and var are different)
+
+    //add two Time objects and print results
+    Time t1 = new Time(9,20,25.1); //start time
+    Time t2 = new Time(9,29,34.2); //finished time
+
+    //add two Time objects and save the result in another Time object
+    Time endTime = Time.add(t1, t2); //added start and finished time
+
+    System.out.print("t1: ");
+    printTime(t1);
+    System.out.print("t2: ");
+    printTime(t2);
+    System.out.print("t1 + t2: ");
+    printTime(endTime);
 
 
   }//end main()
@@ -64,14 +76,29 @@ public class Driver {
         t.hour, t.minute, t.second);
   }//end of printTime Method
 
+
+//Testing for equality (attributes) of the Time instance
   public static void checkTime(Time t, Time var){
-    if (t == var){
-      System.out.println("The times are the same.");
+    System.out.print("Time t is: " );
+    printTime(t);
+    System.out.print(" and time var is: " );
+    printTime(var);
+    if (t.hour == var.hour && t.minute == var.minute && t.second == var.second){
+      System.out.println("Time t and time var are the same.");
     }
     else{
-      System.out.println("The times are different.");
+      System.out.println("Time t and time var are different.");
     }
+  }
     
-  }//end of checkTime
+    
+  //Adding two Time objects   
+  /*public static Time add(Time t1, Time t2) {
+    Time sum = new Time();
+    sum.hour = t1.hour + t2.hour;
+    sum.minute = t1.minute + t2.minute;
+    sum.second = t1.second + t2.second;
+    return sum;
+  }//end of Time Method*/
 
 }//end class
