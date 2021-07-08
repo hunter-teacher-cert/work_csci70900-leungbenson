@@ -182,7 +182,7 @@ public void set(int index, int value)
 
 private void grow(int index)
   {
-    if (index>this.data.length) // if new array is needed then increase by 10
+    if (index>this.data.length) // if new array is needed then increase by 1
     {
       int[] newData = new int[index+1]; //increase array to index
     

@@ -84,6 +84,8 @@ public class Mancala{
   }
 
 
+
+
 // Method prints the board
   public static void printBoard (int[] board){
     
@@ -102,7 +104,7 @@ public class Mancala{
     System.out.print(board[i] + " " );
     }
     System.out.println("\n");
-  }
+  }//end of printBoard
   
   //Method for Player's Turn
   public static int[] playersTurn (int[] board){
@@ -113,7 +115,7 @@ public class Mancala{
     int pStones = board[pPit];
 
     //Check validity: Must be in pits 0-5 and has stones
-    if (pPit<0 || pPit>5 || pStones < 1){
+    if (pPit<0 || pPit>5 || pStones<1){
       System.out.println("Your choice is invalid. Please try again.");
       playersTurn(board);
     }
@@ -124,7 +126,7 @@ public class Mancala{
     }  
     
     return board;
-  }
+  }// end of playersTurn
 
 // Method for Player and AI selection
   public static int[] stonesTracking (int pit, int stones, int[] board){
@@ -156,7 +158,7 @@ public class Mancala{
       
     }
     return board;
-  }
+  }//end of stonesTracking
 
   // Method for AI's turn  
   public static int[] aiTurn(int[] board){

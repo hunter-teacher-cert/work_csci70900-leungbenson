@@ -1,3 +1,7 @@
+Notes:
+https://docs.google.com/document/d/1ks9N8TMVxPjaKKTev912LsJO6Jy7_7cxlmerwg7dKSs/edit
+
+
 Eric Wilson and Benson Leung
 Game of Mancala
 6 5 4 3 2 1 0
