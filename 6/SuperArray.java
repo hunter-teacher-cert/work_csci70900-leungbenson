@@ -1,6 +1,8 @@
 /**
   Alex Moore and Benson Leung
 
+  Need to still remove empty values 
+
   Is a constructor created by default?
   How many array elements are necesary?
   Can we create two constructors with identical parameters?
