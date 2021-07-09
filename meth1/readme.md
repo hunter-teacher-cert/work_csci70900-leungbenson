@@ -26,3 +26,6 @@ emphasized throughout the course.
    - assess learning and differentiate instruction for diverse populations.
    - Employ a variety of effective pedagogical standards in order to deliver instruction aligned with the proposed CSTA standards.
    - Use current technology and CS content and will be able to learn new technologies and content. Teacher-candidates will be able to develop coherent, meaningful goals, plans, and materials.
+
+## Why Teach CS?
+https://jamboard.google.com/d/1eCbt1NDPMvxe2UAcuvGqEdyl4dCi8aDnCPlnrYou3FQ/viewer?f=1
