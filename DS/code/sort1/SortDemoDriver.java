@@ -20,10 +20,10 @@ public class SortDemoDriver {
 	
 	
 	/* part 3 test lines */
-	/*
+	
 	  System.out.println(sd);
 	  sd.sort();
 	  System.out.println(sd);
-	*/
+	
     }
 }
