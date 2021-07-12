@@ -60,6 +60,8 @@ public class SortDemo{
       int smallIndex = start;
       int smallestValue = data.get(smallIndex);
       // start a variable at the one after start
+
+      //may or may not present an issue for certain data sets such as nothing in array
       for (int i = start+1; i<data.size(); i++){ //loop through the arraylist starting at the index start
         if (data.get(i) < smallestValue){ //if the element at index i is smaller than the smallestValue
           smallIndex = i; //update the smallestIndex to be i where we find the smaller value
@@ -68,6 +70,7 @@ public class SortDemo{
       }
       return smallIndex;
     }// end of findSmallestIndex
+
     public void sort(){
       int i;
  	    for (i=0;i < data.size()-1; i++){
@@ -81,6 +84,7 @@ public class SortDemo{
  	    } //end of loop
     }//end of sort()
     /* If you finish the lab early you can get started on this */
+    
     public int linearSearch(int value){
 	// loop through the ArrayList data
 	// and if the value you're searchign for is in the ArrayList, return it.
