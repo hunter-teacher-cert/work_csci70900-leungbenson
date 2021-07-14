@@ -1,4 +1,3 @@
-  
 import java.io.*;
 import java.util.*;
 
@@ -8,18 +7,18 @@ public class Node {
     private Node next;
 
     public Node() {
-      data = "";
-      next = null;
+    	data = "";
+    	next = null;
     }//default constructor
 
     public Node(String value) {
-      data = value;
-      next = null;
-    }//constructor(vale)
+    	data = value;
+    	next = null;
+    }//constructor(value)
 
     public Node(String value, Node next) {
-      data = value;
-      this.next = next;
+    	data = value;
+    	this.next = next;
     }//constructor(value, next)
 
     public void setData(String value) {
@@ -31,15 +30,25 @@ public class Node {
     }//setNext
 
     public String getData() {
-	    return data;
+    	return data;
     }//end getValue
 
     public Node getNext() {
-	    return next;
+    	return next;
     }//getNext
 
     public String toString() {
-	    return data;
+    	return data;
     }//toString
+
+    public String printList(){
+      Node currentVar = this;
+      String output ="";
+      do {
+        output += currentVar.toString();
+        currentVar = currentVar.getNext();
+      }while (currentVar != null);
+      return output;
+    }//printList
 
 }//class Node
