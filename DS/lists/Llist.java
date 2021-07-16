@@ -93,9 +93,7 @@ public class Llist{
    // only sets if the index is within range
    public void set(int index, String value){
      Node currentNode; //declare current node
-     Node beforeCurrentNode;
    	 currentNode = front; //initialize it to the front node
-     beforeCurrentNode = front;
      int counter = 0;
 
      if (index > this.length()) { //if index is greater than length...
@@ -104,13 +102,8 @@ public class Llist{
      }
 
      while (currentNode != null){
-       if (counter == index - 1) {
-         beforeCurrentNode = currentNode;
-       }
        if (counter == index) {
-         Node n = new Node(value);
-         n.setNext(currentNode.getNext());//sets new value to point to what current node points to
-         beforeCurrentNode.setNext(n);
+         currentNode.setData(value); //use setData to update the index value
          break;
        }//end if
        counter++;
@@ -127,17 +120,58 @@ public class Llist{
    // the node BEFORE you want to do the insertion.
    public void insert(int index, String value){
 
-   }
+     if (index > this.length()) { //if index is greater than length...
+       System.out.println("Choose an index within the linked list");
+       return; //...return null
+     }
+
+     Node currentNode; //declare current node
+   	 currentNode = front; //initialize it to the front node
+     int counter = 0;
+
+    while (currentNode != null){
+
+      if (counter == index - 1) {
+
+         Node n = new Node(value);  // make the new node
+         n.setNext(currentNode.getNext());//sets new value to point to what current node points to
+         currentNode.setNext(n); //sets previous node to point to new node
+         break;
+       }//end if
+       counter++;
+       currentNode = currentNode.getNext();
+     }//end while
+   }// end of insert
 
    // returns the index of the first item with
    // data value key. Returns -1 if not found
    public int search(String key){
-     return -1;
-   }
+     int index = 0; //initialize index to -1
+     Node currentNode; //declare current node
+     currentNode = front; //initialize it to the front node
+
+
+     while (currentNode != null){
+
+      if (currentNode.getData() == key) { //if we find the key value...
+        return index; //return the index
+       }//end if
+
+       index++;
+       currentNode = currentNode.getNext();
+     }//end while
+
+     return index = -1;
+   }//end search
 
    // removes the node at index.
    // does nothing if index out of bounds
    public void remove(int index){
 
+     if (index > this.length()) { //if index is greater than length...
+       System.out.println("Choose an index within the linked list");
+       return; //...return null
+     }
+     
    }
 }
