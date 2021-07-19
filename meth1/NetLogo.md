@@ -10,4 +10,6 @@ Then explain to them that at the end they will be able to create something simil
 
 I would model a very simple program such as what DW did with the turtle.
 
-The students would create a similar program, but try to write their names with the turle.
+The students would create a similar program, but try to write their names with the turtle.
+
+This might be a two part lesson.  I might be a bit ambitious.
