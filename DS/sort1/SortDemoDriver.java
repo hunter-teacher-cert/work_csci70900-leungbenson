@@ -50,9 +50,13 @@ public class SortDemoDriver {
 */
 //This is to test the merge
   
-    sd.testMerge();
-    }
+    //sd.testMerge();
+    //}
+
+  System.out.println(sd);
+	sd.msortTest();
+	System.out.println(sd);
 
     
-
+  }
 }

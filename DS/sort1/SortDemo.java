@@ -219,6 +219,51 @@ public class SortDemo{
           return a;
 
         }//end fillForMerge
+        
+         /*
+      Parameters: l - an ArrayList
+      
+      Returns: a new, sorted ArrayList
+      This routine should implement the mergesort algorithm.
+    */
+    public ArrayList<Integer> msort(ArrayList<Integer> l){
+	
+      ArrayList<Integer> left = new ArrayList<Integer>() ;
+      ArrayList<Integer> right = new ArrayList<Integer>();
+
+      // base case - if the input ArrayList is smaller than 2 elements
+      
+      if (l.size()<2){
+        return l;
+      }
+
+      // split l into left and right halves
+      else {        
+          for (int i = 0; i < l.size()/2; i++){ // split into left side
+            left.add(l.get(i)); 
+          }
+
+          for (int j = l.size()/2; j < l.size(); j++){ // split into right side
+            right.add(l.get(j));  
+          }
+          //System.out.println(left + " ----" + right);
+
+          //msort(left); // sort the left half
+          //msort(right); // sort the right half
+
+          // return the result
+          // merge the two halves that have been sorted
+
+          return merge(msort(left), msort(right));
+
+      }// end else
+           
+    }// end msort
+
+       public void msortTest(){
+	      data = msort(data);
+     }// end msortTest
+
 
         public void testMerge(){
 
@@ -231,9 +276,7 @@ public class SortDemo{
           ArrayList<Integer> result = merge(a,b);
           System.out.println("Array result: " + result);
 
-          
-
-        }
+        }//end testMerge
 
 
 
