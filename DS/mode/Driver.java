@@ -9,8 +9,8 @@ public class Driver{
   int freqVal = m.frequency(2);
 
 	System.out.println("Array list " + m);
-  System.out.println("Minimum value" + minimum);
-  System.out.println("Frequency of " + value + " is " + freqVal);
+  System.out.println("Minimum value: " + minimum);
+  //System.out.println("Frequency of " + value + " is " + freqVal);
   System.out.println("The mode is  " + m.calcMode());
   }//end main
     

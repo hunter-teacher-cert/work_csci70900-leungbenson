@@ -45,13 +45,15 @@ public class Mode{
 	
    public int findLargestValue(){
     int max = inputFreq.get(0);
+    int index = 0;
     for (int i=1; i > inputFreq.size(); i++){
-      if (inputFreq.get(i) < max){
+      if (inputFreq.get(i) > max){
         max = inputFreq.get(i);
+        index = i;
       }//end if
     }//end for
 
-	  return max; //return minimum value in dataset
+	  return index; //return minimum value in dataset
 	
   }//end findLargestValue()
 
@@ -85,9 +87,9 @@ public class Mode{
   public int calcMode(){
     inputFreq = new ArrayList<Integer>(); //empty array list 
     for (int i = 0; i < inputData.size();i++){
-      inputFreq.add = inputData.frequency(inputData.get(i));
+      inputFreq.add(frequency(inputData.get(i)));
     }//end for
-    int index = inputFreq.findLargestValue();
+    int index = findLargestValue();
     return inputData.get(index);
   }//end calcMode
 
