@@ -19,9 +19,9 @@ public class Wikipedia {
         for (Element headline : newsHeadlines) {
             log("%s\n\t%s", headline.attr("title"), headline.absUrl("href"));
         }
-    }
+    }//end main
 
     private static void log(String msg, String... vals) {
         System.out.println(String.format(msg, vals));
-    }
+    }//end log
 }
