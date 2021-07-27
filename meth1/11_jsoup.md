@@ -1,8 +1,10 @@
 # Intro to JSoup:
 - Libraries and Scraping and HTML, Oh My!
 ## Instructions for Setup:
+- make a jsoup directory that contains the .jar file and wikipedia file
 - Go to website, download .jar file
 - open .jar file in text editor
+- make a copy of Wikipedia.java file from class repo
 ## Practice Exercise:
 - Notice & Wonder: list as code comments what you think each line / block in Wikipedia.java does.
 - Compile, run, and debug Wikipedia.java, using example on Jsoup homepage.
