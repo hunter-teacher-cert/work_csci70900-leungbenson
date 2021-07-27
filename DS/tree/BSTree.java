@@ -130,21 +130,36 @@ public class BSTree {
 
     //when left is not empty and right is empty
     else if (front.getLeft() != null  && front.getRight() == null){
-      //repoint front's parent to front's child
+      /*//repoint front's parent to front's child
       //if (front.getRight().getData() > front.getData())
       //if(front.getLeft() > trailer.getData())
         trailer.setRight(front.getLeft());
       //else  
         //trailer.setLeft(front.getLeft());
+      */
+                       // check to see if front has one child
+      // repoint front's parent to front's child
+      if (front.getData() > trailer.getData()) { // front to right of trailer
+        trailer.setRight(front.getLeft()); // left of front not empty
+      } else { // front to the left of trailer
+        trailer.setLeft(front.getLeft());// left of front not empty
+      }
     }
 
     //when right is not empty and left is empty
     else if (front.getRight() != null  && front.getLeft() == null){
+            if (front.getData() > trailer.getData()) { //front to the right of trailer
+        trailer.setRight(front.getRight()); // right of front not empty
+      } else {  // front to the left of the trailer
+        trailer.setLeft(front.getRight()); // right of front not empty
+      }
+      /*
       //repoint front's parent to front's child
       //if (front.getRight().getData() > front.getData())
         //trailer.setRight(front.getRight());
       //else
         trailer.setRight(front.getLeft());
+      */
     }
 
     //case 3 -- front has two children
