@@ -131,18 +131,19 @@ public class BSTree {
     //when left is not empty and right is empty
     else if (front.getLeft() != null  && front.getRight() == null){
       //repoint front's parent to front's child
-      if (front.getRight().getData() > front.getData())
-        trailer.setLeft(front.getRight());
-      else  
-        trailer.setLeft(front.getLeft());
+      //if (front.getRight().getData() > front.getData())
+      //if(front.getLeft() > trailer.getData())
+        trailer.setRight(front.getLeft());
+      //else  
+        //trailer.setLeft(front.getLeft());
     }
 
     //when right is not empty and left is empty
     else if (front.getRight() != null  && front.getLeft() == null){
       //repoint front's parent to front's child
-      if (front.getRight().getData() > front.getData())
-        trailer.setRight(front.getRight());
-      else
+      //if (front.getRight().getData() > front.getData())
+        //trailer.setRight(front.getRight());
+      //else
         trailer.setRight(front.getLeft());
     }
 
@@ -157,7 +158,9 @@ public class BSTree {
       }
       
       //and replace front with it
-      
+      delete(max.getData()); //delete the data
+      front.setData(max.getData()); //sets front to new value
+
 
 
 
