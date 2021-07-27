@@ -115,27 +115,54 @@ public class BSTree {
     if (front.getLeft() == null && 
         front.getRight() == null){
       //repoint front's parent to null
-      trailer.setRight(null);
-      trailer.setLeft(null);
+      if(front.getData() > trailer.getData()){
+        trailer.setRight(null);
+      }
+      else if (front.getData() < trailer.getData()){
+        trailer.setLeft(null);
+      }
+      else {
+        root = null; //if root is being deleted with no children
+      }
     }
 
     //case 2 -- front has one child
+
+    //when left is not empty and right is empty
     else if (front.getLeft() != null  && front.getRight() == null){
       //repoint front's parent to front's child
-      trailer.setLeft(front.getLeft());
+      if (front.getRight().getData() > front.getData())
+        trailer.setLeft(front.getRight());
+      else  
+        trailer.setLeft(front.getLeft());
     }
+
+    //when right is not empty and left is empty
     else if (front.getRight() != null  && front.getLeft() == null){
       //repoint front's parent to front's child
-      trailer.setRight(front.getRight());
+      if (front.getRight().getData() > front.getData())
+        trailer.setRight(front.getRight());
+      else
+        trailer.setRight(front.getLeft());
     }
 
     //case 3 -- front has two children
     else{
       //find the node with the largest value on front's left subtree
+      TreeNode max = front.getLeft();
+      
+      // While there is a greater number (something on the right)
+      while (max.getRight() != null){
+        max = max.getRight();
+      }
+      
       //and replace front with it
-      /*int max = front.getLeft();
-      if (front.getLeft().getRight() == null){
-        */
+      
+
+
+
+      
+     
         
       }
        

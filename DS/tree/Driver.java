@@ -33,6 +33,7 @@ public class Driver {
     t.insert(8);
     t.insert(3); 
     t.insert(25); 
+    t.insert(4);
 
     System.out.print("Pre-Order Traverse: ");
     t.preorderTraverse();
@@ -49,6 +50,12 @@ public class Driver {
 
     t.delete(7);
     System.out.print("Deleted 7: ");
+    t.preorderTraverse();
+    System.out.print("In-Order Traverse: ");
+    t.inorderTraverse();
+
+    t.delete(4);
+    System.out.print("Deleted 4: ");
     t.preorderTraverse();
 
     
