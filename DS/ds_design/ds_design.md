@@ -1,5 +1,5 @@
 # Phonebook
-Benson, Daiana, Eric, Victoria
+Benson, Daiana, Eric Liu, Victoria
 
 ## ArrayList
 
@@ -7,7 +7,8 @@ Benson, Daiana, Eric, Victoria
 
 - ArrayList of public class *person*
 - Instance Variable in Phonebook:
-    - ArrayList<Person> people = new ArrayList<Person>()- ![arraylistperson](arraylistperson.jpg)
+    - ArrayList<Person> people = new ArrayList<Person>()
+    - ![arraylistperson](arraylistperson.jpg)
 
 - add:
   - input: String firstName, lastName, int phoneNumber
