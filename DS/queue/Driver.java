@@ -11,7 +11,7 @@ public class Driver{
     n.enqueue("Steph");
 
     System.out.println("Queue: " + n);
-    System.out.println("The number of people in queue is:" + n.size());
+    System.out.println("The number of people in queue is: " + n.size());
     System.out.println("Is list empty? " + n.isEmpty());
     
     n.dequeue();
@@ -32,7 +32,7 @@ public class Driver{
     n.enqueue("Peter");
     
     System.out.println("Queue: " + n);
-    System.out.println("The number of people in queue is:" + n.size());
+    System.out.println("The number of people in queue is: " + n.size());
     System.out.println("The first person in queue is: " + n.front());
 
   }//end of main

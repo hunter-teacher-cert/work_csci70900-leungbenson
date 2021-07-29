@@ -15,12 +15,6 @@ public class Queue {
     data = "";
   }//default constructor
 
-/*  public Queue(String value) {
-    data = value;
-    head = null;
-    count = 0;
-    tail = null;
-  }//constructor(value)*/
 
   //are the items in the queue?
   //TODO:create a private int to keep track of size
@@ -75,7 +69,6 @@ public class Queue {
         tail = null;
         count--;
       }
-        //count--;
     }
 
     }//end dequeue
@@ -100,7 +93,7 @@ public class Queue {
     result = result + "tail";
     return result;
 
-  }
+  }//end toString
 
 
 }//end class
